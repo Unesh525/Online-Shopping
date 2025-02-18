@@ -11,14 +11,71 @@
         <script src="https://kit.fontawesome.com/088d239643.js" crossorigin="anonymous"></script>
         <script src="https://kit.fontawesome.com/088d239643.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="style.css">
+        <style>
+              h2 {
+            text-align: center;
+            color: #333;
+            font-size: 20px;
+        }
+
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        input[type="text"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background: #218838;
+        }
+
+        #response {
+            text-align: center;
+            margin-top: 20px;
+            color: #28a745;
+        }
+        </style>
     </head>
 
     <body>
         <div id="overlay"></div>
     <div id="popup">
-        <h2>Welcome!</h2>
-        <p>This is a popup that appears on page load.</p>
-        <button onclick="closePopup()">Close</button>
+        <form id="contactForm">
+     
+            <h2>Delivery Information</h2>
+        
+                    <input type="text" name="firstname" placeholder="First Name" required>
+                    <input type="text" name="lastname" placeholder="Last Name" required>
+                    <input type="text" name="address" placeholder="Address" required>
+                    <input type="text" name="city" placeholder="City" required>
+                    <input type="text" name="state" placeholder="State" required>
+                    <input type="text" name="pincode" placeholder="Pin Code" required>
+                    <input type="text" name="phone" placeholder="Phone" required>        
+                <button type="submit">Submit</button></button>
+            </form>
+        
+        
     </div>
         <section id="header">
             <a href="#"><img src="img/logo.png" alt="" class="logo"></a>
