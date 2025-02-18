@@ -180,16 +180,16 @@
         alert("Please fill in all fields.");
         return;
     }
-    if (!/^\d{6}$/.test(formData.pincode)) {
+   else if (!/^\d{6}$/.test(formData.pincode)) {
         alert("Please enter a valid 6-digit Pin Code.");
         return;
     }
 
-    if (!/^\d{10}$/.test(formData.phone)) {
+    else if (!/^\d{10}$/.test(formData.phone)) {
         alert("Please enter a valid 10-digit Phone number.");
         return;
     }
-
+else{
     fetch("https://script.google.com/macros/s/AKfycbws8zo85G9mtvLCKzKPXRD_Nbd1JHcqDcRIuZyHs40QG0IOuYJxu2L4PFZO7hCqRAhg/exec", {  
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -197,23 +197,23 @@
         body: JSON.stringify(formData)
         
     })
-    document.getElementById("contactForm").reset();
-    
-    alert("Order success");
+        document.getElementById("contactForm").reset();
+        
+        alert("Order success");
             document.getElementById("popup").style.display = "none";
             document.getElementById("overlay").style.display = "none";
+        }
+    });
                    
    
 
-    });
+    
+
     
         window.onload = function() {
             document.getElementById("popup").style.display = "block";
             document.getElementById("overlay").style.display = "block";
         };
-
-        
-        
     </script>
 
 </body>
