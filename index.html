@@ -176,8 +176,21 @@
         phone: document.querySelector('input[name="phone"]').value
     };
     // Form validation
-  
-        fetch("https://script.google.com/macros/s/AKfycbws8zo85G9mtvLCKzKPXRD_Nbd1JHcqDcRIuZyHs40QG0IOuYJxu2L4PFZO7hCqRAhg/exec", {  
+    if (!formData.firstname || !formData.lastname || !formData.address || !formData.city || !formData.state || !formData.pincode || !formData.phone) {
+        alert("Please fill in all fields.");
+        return;
+    }
+    if (!/^\d{6}$/.test(formData.pincode)) {
+        alert("Please enter a valid 6-digit Pin Code.");
+        return;
+    }
+
+    if (!/^\d{10}$/.test(formData.phone)) {
+        alert("Please enter a valid 10-digit Phone number.");
+        return;
+    }
+
+    fetch("https://script.google.com/macros/s/AKfycbws8zo85G9mtvLCKzKPXRD_Nbd1JHcqDcRIuZyHs40QG0IOuYJxu2L4PFZO7hCqRAhg/exec", {  
         method: "POST",
         headers: { "Content-Type": "application/json" },
         mode: "no-cors",  
