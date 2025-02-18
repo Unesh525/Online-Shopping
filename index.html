@@ -59,7 +59,72 @@
     </head>
 
     <body>
-    
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup on Load</title>
+    <style>
+        /* Popup styling */
+        #popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            z-index: 1000;
+        }
+        #overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            border: none;
+            background: blue;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="overlay"></div>
+    <div id="popup">
+        <h2>Welcome!</h2>
+        <p>This is a popup that appears on page load.</p>
+        <button onclick="closePopup()">Close</button>
+    </div>
+
+    <script>
+        window.onload = function() {
+            document.getElementById("popup").style.display = "block";
+            document.getElementById("overlay").style.display = "block";
+        };
+
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+            document.getElementById("overlay").style.display = "none";
+        }
+    </script>
+
+</body>
+</html>
+
      
         <section id="header">
             <a href="#"><img src="img/logo.png" alt="" class="logo"></a>
@@ -384,6 +449,18 @@
     </div>
 </footer>
 
-        <script src="script.js"></script>
+        <script src="script.js">
+            <script>
+    window.onload = function() {
+        let userChoice = confirm("Do you want to continue?");
+        if (userChoice) {
+            alert("Welcome!");
+        } else {
+            alert("Goodbye!");
+        }
+    };
+</script>
+
+        </script>
 </body>
 </html>
