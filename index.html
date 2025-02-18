@@ -506,9 +506,30 @@ else{
             <p>Get Email updates about our latest shop and <span>special offers</span> </p>
         </div>
         <div class="form">
-            <input type="text" placeholder="Your email address">
-            <button class="normal">Sign Up</button>
+            
+    <form id="contactForm">
+            <input type="email"  name="email" placeholder="Your email address">
+             <button type="submit" class="normal" > Sign Up</button>
+        </form>
         </div>
+
+        <script>
+            document.getElementById("contactForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    let formData = {
+        email: document.querySelector('input[name="email"]').value,
+    };
+    
+    fetch("https://script.google.com/macros/s/AKfycbzMuTfGvOvelp0HsoCxqxyu4Vb-0DQ3hdmZhj6I9ucnbVKGigjXKS2CDAOtQ-98wEmx/exec", {  
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        mode: "no-cors",  
+        body: JSON.stringify(formData)
+        
+    })
+    });
+        </script>
     </section>
 
     <!--------FOOTER------------->
