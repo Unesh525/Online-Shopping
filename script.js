@@ -52,7 +52,6 @@ function buy(){
     })
     document.getElementById("contactForm").reset();
     alert("Your order has been placed successfully");
-    window.location.href = "https://pay.upilink.in/pay/80005096354-1@ybl?am=156";
 
     });
     
